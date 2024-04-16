@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.86.0'
+project:
+    name: R-7
+    package:
+        name: R-7
+        api_version: '60.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/R-7/tests
+            options:
+                outputdir: robot/R-7/results
+
+    robot_testdoc:
+        options:
+            path: robot/R-7/tests
+            output: robot/R-7/doc/R-7_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
